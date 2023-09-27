@@ -115,7 +115,7 @@ echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Trial Account XRAY Vless   "
 echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Extending Account XRAY Vless Active "
 echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Delete Account XRAY Vless Websocket    "
 echo -e "     ${BICyan}[${BIWhite}05${BICyan}] Check User Login XRAY Vless     "
-echo -e "     ${BICyan}[${BIWhite}05${BICyan}] Check XRAY Vless Config     "
+echo -e "     ${BICyan}[${BIWhite}06${BICyan}] Check XRAY Vless Config     "
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}00${BICyan}] Back to main menu     "
 
