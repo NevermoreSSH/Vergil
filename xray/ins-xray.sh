@@ -632,6 +632,9 @@ wget -O deltrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xra
 wget -O renewtrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xray/renewtrgo.sh" && chmod +x renewtrgo
 wget -O cektrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xray/cektrgo.sh" && chmod +x cektrgo
 
+# additional
+wget -O dns1 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/dns.sh" && chmod +x dns1
+wget -O netf "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/netf.sh" && chmod +x netf
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
