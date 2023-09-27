@@ -637,8 +637,11 @@ wget -O dns1 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons
 wget -O netf "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/netf.sh" && chmod +x netf
 wget -O bbr3 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr3.sh" && chmod +x bbr3
 wget -O bbr4 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr4.sh" && chmod +x bbr4
+wget -O user-vless "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-vless.sh" && chmod +x user-vless
+wget -O user-ws "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-ws.sh" && chmod +x user-ws
 apt install htop -y
 apt install vnstat -y
+apt install resolvconf -y
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
