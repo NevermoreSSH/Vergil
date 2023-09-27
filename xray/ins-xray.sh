@@ -639,6 +639,7 @@ wget -O bbr3 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons
 wget -O bbr4 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr4.sh" && chmod +x bbr4
 wget -O user-vless "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-vless.sh" && chmod +x user-vless
 wget -O user-ws "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-ws.sh" && chmod +x user-ws
+wget -O user-tr "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-tr.sh" && chmod +x user-tr
 apt install htop -y
 apt install vnstat -y
 apt install resolvconf -y
