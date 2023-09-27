@@ -52,8 +52,9 @@ echo -e "\E[40;1;37m        Xray/Vless Account        \E[0m" | tee -a /etc/log-c
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Remarks        : ${user}" | tee -a /etc/log-create-user.log
 echo -e "Domain         : ${domain}" | tee -a /etc/log-create-user.log
-echo -e "Port TLS       : $tls" | tee -a /etc/log-create-user.log
-echo -e "Port none TLS  : $none" | tee -a /etc/log-create-user.log
+echo -e "Port TLS       : 443" | tee -a /etc/log-create-user.log
+echo -e "Port none TLS  : 80" | tee -a /etc/log-create-user.log
+echo -e "Port  GRPC     : 443" | tee -a /etc/log-create-user.log
 echo -e "Uuid           : ${uuid}" | tee -a /etc/log-create-user.log
 echo -e "Encryption     : none" | tee -a /etc/log-create-user.log
 echo -e "Network        : ws" | tee -a /etc/log-create-user.log
