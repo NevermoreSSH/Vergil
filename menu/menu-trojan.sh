@@ -115,6 +115,8 @@ echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Trial Account Trojan     "
 echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Extending Account Trojan Active Life      "
 echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Delete Account Trojan     "
 echo -e "     ${BICyan}[${BIWhite}05${BICyan}] Check User Login Trojan     "
+echo -e ""
+echo -e "     ${BICyan}[${BIWhite}00${BICyan}] Back to Main Menu     "
 
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
