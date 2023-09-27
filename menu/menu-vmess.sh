@@ -114,6 +114,7 @@ echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Trial Account XRAY Vmess     "
 echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Extending Account XRAY Vmess Active "
 echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Delete Account XRAY Vmess Websocket  "
 echo -e "     ${BICyan}[${BIWhite}05${BICyan}] Check User Login XRAY Vmess     "
+echo -e "     ${BICyan}[${BIWhite}06${BICyan}] Check XRAY Vmess Config     "
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}00${BICyan}] Back to main menu     "
 
@@ -128,6 +129,7 @@ case $opt in
 3) clear ; renew-ws ; exit ;;
 4) clear ; del-ws ; exit ;;
 5) clear ; cek-ws ; exit ;;
+6) clear ; user-ws ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo "Wrong Button " ; sleep 1 ; menu-vmess ;;
