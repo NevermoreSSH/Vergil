@@ -635,6 +635,10 @@ wget -O cektrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xra
 # additional
 wget -O dns1 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/dns.sh" && chmod +x dns1
 wget -O netf "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/netf.sh" && chmod +x netf
+wget -O bbr3 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr3.sh" && chmod +x bbr3
+wget -O bbr4 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr4.sh" && chmod +x bbr4
+apt install htop -y
+apt install vnstat -y
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
