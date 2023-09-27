@@ -114,6 +114,7 @@ echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Trial Account SSH & OVPN   "
 echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Trial Account VMESS    "
 echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Trial Account VLESS     "
 echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Trial Account TROJAN   "
+echo -e ""
 echo -e "     ${BICyan}[${BIWhite}00${BICyan}] Back to main menu   "
 
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
