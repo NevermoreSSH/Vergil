@@ -115,6 +115,7 @@ echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Trial Account XRAY Vless   "
 echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Extending Account XRAY Vless Active "
 echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Delete Account XRAY Vless Websocket    "
 echo -e "     ${BICyan}[${BIWhite}05${BICyan}] Check User Login XRAY Vless     "
+echo -e "     ${BICyan}[${BIWhite}05${BICyan}] Check XRAY Vless Config     "
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}00${BICyan}] Back to main menu     "
 
@@ -129,6 +130,7 @@ case $opt in
 3) clear ; renew-vless ; exit ;;
 4) clear ; del-vless ; exit ;;
 5) clear ; cek-vless ; exit ;;
+6) clear ; user-vless ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo "Wrong Button " ; sleep 1 ; menu-vless ;;
