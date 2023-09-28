@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script  By NevermoreSSH
 # 2023 DNSTT
-# ===============================================
+# =============================================
 sudo apt install squid -y
 #setting IPtables
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
