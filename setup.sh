@@ -223,7 +223,7 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
-echo "=====================-[ SCRIPT AWAN BEBAS TUNNEL ]-===================="
+echo "=====================-[ SCRIPT PREMIUM NEVERMORESSH ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -246,7 +246,7 @@ echo "   - Trojan Go		: 443" | tee -a log-install.txt
 echo "   - slowDNS              : 443,80,8080,53,5300" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
-echo "   - Timezone		: Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
+echo "   - Timezone		: Asia/Kuala_Lumpur (GMT +8)"  | tee -a log-install.txt
 echo "   - Fail2Ban		: [ON]"  | tee -a log-install.txt
 echo "   - Dflate		: [ON]"  | tee -a log-install.txt
 echo "   - IPtables		: [ON]"  | tee -a log-install.txt
@@ -264,7 +264,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script Created By Awan Bebas]-==============="
+echo "===============-[ Script Created By todfix667 ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
