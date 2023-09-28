@@ -41,7 +41,7 @@ hariini=`date -d "0 days" +"%Y-%m-%d"`
 acs=`cat<<EOF
       {
       "v": "2",
-      "ps": "${user}",
+      "ps": "VMESS_TLS_${user}",
       "add": "${domain}",
       "port": "443",
       "id": "${uuid}",
@@ -56,7 +56,7 @@ EOF`
 ask=`cat<<EOF
       {
       "v": "2",
-      "ps": "${user}",
+      "ps": "VMESS_NTLS_${user}",
       "add": "${domain}",
       "port": "80",
       "id": "${uuid}",
@@ -71,7 +71,7 @@ EOF`
 grpc=`cat<<EOF
       {
       "v": "2",
-      "ps": "${user}",
+      "ps": "VMESS_GRPC_${user}",
       "add": "${domain}",
       "port": "443",
       "id": "${uuid}",
