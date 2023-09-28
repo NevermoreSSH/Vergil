@@ -13,7 +13,7 @@ sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 acs=`cat<<EOF
       {
       "v": "2",
-      "ps": "${user}",
+      "ps": "VMESS_TLS_${user}",
       "add": "${domain}",
       "port": "443",
       "id": "${uuid}",
@@ -28,7 +28,7 @@ EOF`
 ask=`cat<<EOF
       {
       "v": "2",
-      "ps": "${user}",
+      "ps": "VMESS_NTLS_${user}",
       "add": "${domain}",
       "port": "80",
       "id": "${uuid}",
@@ -43,7 +43,7 @@ EOF`
 grpc=`cat<<EOF
       {
       "v": "2",
-      "ps": "${user}",
+      "ps": "VMESS_GRPC_${user}",
       "add": "${domain}",
       "port": "443",
       "id": "${uuid}",
@@ -71,9 +71,9 @@ echo -e "\E[40;1;37m       Trial Xray/Vmess      \E[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
-echo -e "Port TLS       : ${tls}"
-echo -e "Port none TLS  : ${none}"
-echo -e "Port  GRPC     : ${tls}"
+echo -e "Port TLS       : 443"
+echo -e "Port none TLS  : 80"
+echo -e "Port  GRPC     : 443"
 echo -e "id             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
