@@ -107,7 +107,7 @@ restart
 elif [[ "$num" = "3" ]]; then
 uninstall
 elif [[ "$num" = "0" ]]; then
-menu
+menu-set
 elif [[ "$num" = "x" ]]; then
 exit
 else
