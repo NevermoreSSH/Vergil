@@ -34,6 +34,7 @@ apt -y install chrony
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
+
 # install xray
 sleep 1
 echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
@@ -48,12 +49,10 @@ touch /var/log/xray/access.log
 touch /var/log/xray/error.log
 touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
+# / / Ambil Xray Core Version Terbaru
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
 
-# // VERSION XRAY
-export version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 
-# // INSTALL CORE XRAY
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version ${version}
 
 ## crt xray
 systemctl stop nginx
@@ -489,11 +488,8 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
              root /home/vps/public_html;
         }
 EOF
-sed -i '$ i# This is the proxy Xray For Vless Servers' /etc/nginx/conf.d/xray.conf
-sed -i '$ i    location /vless {' /etc/nginx/conf.d/xray.conf
-sed -i '$ iif ($http_upgrade != "Upgrade") {' /etc/nginx/conf.d/xray.conf
-sed -i '$ irewrite /(.*) /vless break;' /etc/nginx/conf.d/xray.conf
-sed -i '$ i      }' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /vless' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:14016;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
@@ -504,11 +500,8 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-sed -i '$ i# This is the proxy Xray For Vmess Servers' /etc/nginx/conf.d/xray.conf
-sed -i '$ i      location / {' /etc/nginx/conf.d/xray.conf
-sed -i '$ i                   if ($http_upgrade != "Upgrade") {' /etc/nginx/conf.d/xray.conf
-sed -i '$ i                   rewrite /(.*) /vmess break;' /etc/nginx/conf.d/xray.conf
-sed -i '$ i     }' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_pass http://127.0.0.1:23456;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
@@ -639,14 +632,6 @@ wget -O deltrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xra
 wget -O renewtrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xray/renewtrgo.sh" && chmod +x renewtrgo
 wget -O cektrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xray/cektrgo.sh" && chmod +x cektrgo
 
-# additional
-wget -O dns1 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/dns.sh" && chmod +x dns1
-wget -O netf "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/netf.sh" && chmod +x netf
-wget -O bbr3 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr3.sh" && chmod +x bbr3
-wget -O bbr4 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr4.sh" && chmod +x bbr4
-wget -O user-vless "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-vless.sh" && chmod +x user-vless
-wget -O user-ws "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-ws.sh" && chmod +x user-ws
-wget -O user-tr "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-tr.sh" && chmod +x user-tr
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
