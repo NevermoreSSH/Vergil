@@ -49,7 +49,7 @@ acs=`cat<<EOF
       "net": "ws",
       "path": "/vmess",
       "type": "none",
-      "host": "",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF`
@@ -64,7 +64,7 @@ ask=`cat<<EOF
       "net": "ws",
       "path": "/vmess",
       "type": "none",
-      "host": "",
+      "host": "${domain}",
       "tls": "none"
 }
 EOF`
