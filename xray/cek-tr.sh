@@ -50,6 +50,7 @@ done
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
-echo "-----------------------------------------"
-echo "Script Mod By ARTA M"
+echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-trojan
 rm -rf /tmp/other.txt
