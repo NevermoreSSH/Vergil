@@ -11,13 +11,13 @@ source /etc/os-release
 ver=$VERSION_ID
 
 #detail nama perusahaan
-country=ID
-state=Indonesia
+country=MY
+state=Selangor
 locality=none
 organization=none
 organizationalunit=none
 commonname=none
-email=adamspx17@gmail.com
+email=elliez667@gmail.com
 
 # simple password minimal
 curl -sS https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
@@ -82,8 +82,8 @@ apt-get install figlet -y
 apt-get install ruby -y
 gem install lolcat
 
-# set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+# set time GMT +8
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
