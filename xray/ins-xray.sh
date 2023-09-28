@@ -632,6 +632,15 @@ wget -O deltrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xra
 wget -O renewtrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xray/renewtrgo.sh" && chmod +x renewtrgo
 wget -O cektrgo "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/xray/cektrgo.sh" && chmod +x cektrgo
 
+# addons
+wget -O bbr3 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr3.sh" && chmod +x bbr3
+wget -O bbr4 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/bbr4.sh" && chmod +x bbr4
+wget -O dns1 "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/dns.sh" && chmod +x dns1
+wget -O netf "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/netf" && chmod +x netf
+wget -O user-tr "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-tr.sh" && chmod +x user-tr
+wget -O user-vless "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-vless.sh" && chmod +x user-vless
+wget -O user-ws "https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/user-ws.sh" && chmod +x user-ws
+
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
