@@ -189,7 +189,7 @@ bw
 
 0)
 sleep 1
-menu
+menu-set
 ;;
 x)
 exit
