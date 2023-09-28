@@ -53,4 +53,6 @@ echo "other";
 echo "$oth";
 echo "----------------------------------------"
 echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-vless
 rm -rf /tmp/other.txt
