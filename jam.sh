@@ -32,9 +32,9 @@ echo -e "${BICyan}┌───────────────────�
 echo ""
 echo -e "     ${green}Current : $aureb $gg ${NC}"
 echo -e ""
-echo -e " ${BICyan}└───────────────────────────────────────────────┘${NC}" 
+echo -e "${BICyan}└─────────────────────────────────────────────────┘${NC}" 
 echo -e "${BICyan}┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "${BICyan}│${NC}             • sc multi port premium •           ${BICyan}│$NC"
+echo -e "${BICyan}│${NC}           • NevermoreSSH SC Premium •           ${BICyan}│$NC"
 echo -e "${BICyan}└─────────────────────────────────────────────────┘${NC}"
 
 while :; do
