@@ -1,21 +1,16 @@
 #!/bin/bash
-# My Telegram : https://t.me/admmoi
-# ==========================================
-# Color
-RED='\033[0;31m'
-NC='\033[0m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHT='\033[0;37m'
-# ==========================================
-# Getting
-
+# =========================================
+# Quick Setup | Script Setup Manager
+# Edition : Stable Edition V1.0
+# Auther  : NevermoreSSH
+# (C) Copyright 2022
+# =========================================
 clear
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
 echo -n > /tmp/other.txt
-data=( `cat /etc/xray/config.json | grep '^####' | cut -d ' ' -f 2`);
+data=( `cat /etc/xray/config.json | grep '^#&' | cut -d ' ' -f 2 | sort | uniq`);
 echo "----------------------------------------";
 echo "---------=[ Vless User Login ]=---------";
 echo "----------------------------------------";
@@ -25,10 +20,10 @@ if [[ -z "$akun" ]]; then
 akun="tidakada"
 fi
 echo -n > /tmp/ipvless.txt
-data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep xray | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
+data2=( `cat /var/log/xray/access.log | tail -n 500 | cut -d " " -f 3 | sed 's/tcp://g' | cut -d ":" -f 1 | sort | uniq`);
 for ip in "${data2[@]}"
 do
-jum=$(cat /var/log/xray/access.log | grep -w $akun | awk '{print $3}' | cut -d: -f1 | grep -w $ip | sort | uniq)
+jum=$(cat /var/log/xray/access.log | grep -w "$akun" | tail -n 500 | cut -d " " -f 3 | sed 's/tcp://g' | cut -d ":" -f 1 | grep -w "$ip" | sort | uniq)
 if [[ "$jum" = "$ip" ]]; then
 echo "$jum" >> /tmp/ipvless.txt
 else
@@ -42,18 +37,12 @@ if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
 jum2=$(cat /tmp/ipvless.txt | nl)
-echo "user : $akun";
+echo "User : $akun";
 echo "$jum2";
-echo "----------------------------------------"
+echo "----------------------------------------";
 fi
 rm -rf /tmp/ipvless.txt
-done
 rm -rf /tmp/other.txt
-oth=$(cat /tmp/other.txt | sort | uniq | nl)
-echo "other";
-echo "$oth";
-echo "----------------------------------------"
-echo ""
+done
 echo -e ""
 echo -e "Script Mod By NevermoreSSH"
-
