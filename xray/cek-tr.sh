@@ -47,10 +47,10 @@ echo "-----------------------------------------"
 fi
 rm -rf /tmp/iptrojan.txt
 done
+rm -rf /tmp/other.txt
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
 echo ""
-read -n 1 -s -r -p "Press any key to back on menu"
-menu-trojan
-rm -rf /tmp/other.txt
+echo -e ""
+echo -e "Script Mod By NevermoreSSH"
