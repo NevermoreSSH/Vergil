@@ -60,7 +60,6 @@ echo "==============================="
 echo "Username  : $user"
 echo "Expired   : $exp4"
 echo "==============================="
-echo "Script By ARTA M"
-read -n 1 -s -r -p "Press any key to back on menu"
-menu-vmess
+echo -e ""
+echo -e "Script Mod By NevermoreSSH"
 
