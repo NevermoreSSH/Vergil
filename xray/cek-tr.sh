@@ -47,10 +47,9 @@ echo "-----------------------------------------"
 fi
 rm -rf /tmp/iptrojan.txt
 done
-rm -rf /tmp/other.txt
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
-echo ""
 echo -e ""
 echo -e "Script Mod By NevermoreSSH"
+rm -rf /tmp/other.txt
