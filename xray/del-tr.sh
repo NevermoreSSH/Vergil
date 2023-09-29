@@ -52,6 +52,5 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}           ${GREEN} • SCRIPT MULTI PREMIUM •   $NC          $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
-read -n 1 -s -r -p "   Press any key to back on menu"
-menu-trojan
-    fi
+echo -e ""
+echo -e "Script Mod By NevermoreSSH"
