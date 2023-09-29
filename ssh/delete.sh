@@ -46,4 +46,6 @@ clear
                done
                echo " "
                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
+	       echo -e ""
+               echo -e "Script Mod By NevermoreSSH"
         
