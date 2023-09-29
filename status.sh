@@ -153,5 +153,5 @@ echo -e "Vless WS/GRPC       = $status_ss"
 echo -e "Trojan WS/GRPC      = $status_ss"
 echo -e "Shadowsocks WS/GRPC = $status_ss"
 echo ""
-read -n 1 -s -r -p "Press any key to back on menu"
-menu
+echo -e ""
+echo -e "Script Mod By NevermoreSSH"
