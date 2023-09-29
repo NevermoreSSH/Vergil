@@ -19,6 +19,5 @@ else
         echo -e "Failure: User $Pengguna Not Exist."
 fi
 
-read -n 1 -s -r -p "Press any key to back on menu"
-
-menu-ssh
+echo -e ""
+echo -e "Script Mod By NevermoreSSH"
