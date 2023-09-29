@@ -48,11 +48,12 @@ echo "----------------------------------------"
 fi
 rm -rf /tmp/ipvless.txt
 done
+rm -rf /tmp/other.txt
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
 echo "----------------------------------------"
 echo ""
-read -n 1 -s -r -p "Press any key to back on menu"
-menu-vless
-rm -rf /tmp/other.txt
+echo -e ""
+echo -e "Script Mod By NevermoreSSH"
+
