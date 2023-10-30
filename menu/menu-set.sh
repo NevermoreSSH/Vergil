@@ -53,6 +53,8 @@ echo -e "     ${BICyan}[${BIWhite}07${BICyan}] Restart All Service"
 echo -e "     ${BICyan}[${BIWhite}08${BICyan}] Change Banner"
 echo -e "     ${BICyan}[${BIWhite}09${BICyan}] Cek Bandwith"
 echo -e "     ${BICyan}[${BIWhite}10${BICyan}] Setting Auto Reboot"
+echo -e "     ${BICyan}[${BIWhite}11${BICyan}] Install UDP Custom"
+echo -e "     ${BICyan}[${BIWhite}12${BICyan}] Install XrayCore 1.8.4"
 
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
@@ -70,6 +72,8 @@ case $opt in
 8) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
 9) clear ; bw ; exit ;;
 10) clear ; jam ; exit ;;
+11) clear ; wget https://raw.githubusercontent.com/NevermoreSSH/Vergil/main/Tunnel/udp.sh && bash udp.sh ; exit ;;
+12) clear ; mv /usr/local/bin/xray /usr/local/bin/xray.bakk && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/Xray-linux-64-v1.8.4/Xray-linux-64-v1.8.4" && chmod 755 /usr/local/bin/xray && xray version ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo -e "" ; echo "Anda salah tekan" ; sleep 1 ; menu-set ;;
