@@ -14,6 +14,10 @@ rm -rf /root/nsdomain
 rm nsdomain
 
 #input nameserver manual to cloudflare
+clear
+echo "----------------------------------------";
+echo "---------=[ DNSTT NameServer ]=---------";
+echo "----------------------------------------";
 read -rp "Masukkan Nameserver: " -e sub
 SUB_DOMAIN=${sub}
 NS_DOMAIN=${SUB_DOMAIN}
