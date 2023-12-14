@@ -369,6 +369,11 @@ chmod +x menu-backup
 chmod +x backup
 chmod +x restore
 chmod +x jam
+echo "0 6 * * * root reboot" >> /etc/crontab
+echo "0 1 * * * root /usr/local/bin/xp" >> /etc/crontab
+echo "0 2 * * * root /usr/bin/cleaner" >> /etc/crontab
+echo "0 5 * * * root backup" >> /etc/crontab
+echo "0 23 * * * root backup" >> /etc/crontab
 cd
 
 
