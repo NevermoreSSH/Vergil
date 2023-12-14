@@ -98,6 +98,43 @@ vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
+
+cat > /home/vps/public_html/vless-$user.txt <<-END
+
+====================================================================
+             P R O J E C T  O F  N E V E R M O R E S S H
+                       [Freedom Internet]
+====================================================================
+             https://github.com/NevermoreSSH/
+====================================================================
+             Format Xray/Vmess Account WS
+====================================================================
+
+             Link Xray/Vmess Account
+====================================================================
+Remarks        : ${user}
+Domain         : ${domain}
+Port TLS       : 443
+Port none TLS  : 80
+Port  GRPC     : 443
+Uuid           : ${uuid}
+alterId        : 0
+Security       : auto
+Network        : ws
+Path           : /vmess
+ServiceName    : vmess-grpc
+=========================
+Link TLS       : ${vmesslink1}
+=========================
+Link none TLS  : ${vmesslink2}
+=========================
+Link GRPC      : ${vmesslink3}
+=========================
+Expired On     : $exp
+=========================
+
+END
+
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "\\E[40;1;37m        Xray/Vmess Account        \E[0m" | tee -a /etc/log-create-user.log
