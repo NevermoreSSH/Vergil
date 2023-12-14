@@ -41,6 +41,39 @@ echo -e "### $user $exp" >> /etc/trojan-go/akun.conf
 systemctl restart trojan-go.service
 link="trojan-go://${uuid}@isi_bug_disini:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
 link1="trojan://${uuid}@isi_bug_disini:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
+
+cat > /home/vps/public_html/trgo-$user.txt <<-END
+
+====================================================================
+             P R O J E C T  O F  N E V E R M O R E S S H
+                       [Freedom Internet]
+====================================================================
+             https://github.com/NevermoreSSH/
+====================================================================
+             Format Xray/trgo Account
+====================================================================
+
+             Link Xray/trgo Account
+====================================================================
+Remarks    : ${user}
+IP/Host    : ${MYIP}
+Address    : ${domain}
+Port       : ${trgo}
+Key        : ${uuid}
+Encryption : none
+Path       : /trojango
+Created    : $hariini
+Expired    : $exp
+=========================
+Link TrGo  		: ${link}
+=========================
+Link TrGo (v2rayNG)	: ${link1}
+=========================
+Expired On     : $exp
+=========================
+
+END
+
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "\E[40;1;37m          TROJAN GO          \E[0m" | tee -a /etc/log-create-user.log
@@ -58,7 +91,7 @@ echo -e "========================="
 echo -e "Link TrGo  		: ${link}" | tee -a /etc/log-create-user.log
 echo -e "Link TrGo (v2rayNG)	: ${link1}" | tee -a /etc/log-create-user.log
 echo -e "========================="
-echo -e "Script Mod By ARTA M"
+echo -e ""
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 
