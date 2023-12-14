@@ -18,9 +18,9 @@ fi
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m"
 echo -e "\E[40;1;37m            SSH Account            \E[0m"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m"
 read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
@@ -47,7 +47,40 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
 
-cat > /home/vps/public_html/ssh-$user.txt <<-END
+
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\E[40;1;37m        ð—”ð—–ð—–ð—¢ð—¨ð—¡ð—§ ð—œð—¡ð—™ð—¢ð—¥ð— ð—”ð—§ð—œð—¢ð—¡           \E[0m" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Username    : $Login" | tee -a /etc/log-create-user.log
+echo -e "Password    : $Pass" | tee -a /etc/log-create-user.log
+echo -e "Expired On  : $exp" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\E[40;1;37m         ð—¦ð—˜ð—¥ð—©ð—˜ð—¥ ð—œð—¡ð—™ð—¢ð—¥ð— ð—”ð—§ð—œð—¢ð—¡      \E[0m" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
+echo -e "Host        : $(cat /etc/xray/domain)" | tee -a /etc/log-create-user.log
+echo -e "PubKey      : $slkey" | tee -a /etc/log-create-user.log
+echo -e "Nameserver  : $sldomain" | tee -a /etc/log-create-user.log
+echo -e "OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
+echo -e "SSH-WS      : $portsshws" | tee -a /etc/log-create-user.log
+echo -e "SSH-SSL-WS  : $wsssl" | tee -a /etc/log-create-user.log
+echo -e "SSH-UDP     : 1-65535" | tee -a /etc/log-create-user.log
+echo -e "SSL/TLS     : $ssl" | tee -a /etc/log-create-user.log
+echo -e "UDPGW       : 7100-7300" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+#echo -e "OpenVPN Config : http://$IP:81/" | tee -a /etc/log-create-user.log
+#echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Payload WSS" | tee -a /etc/log-create-user.log
+echo -e "
+GET wss://isi_bug_disini [protocol][crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
+" | tee -a /etc/log-create-user.log
+echo -e "Payload WS" | tee -a /etc/log-create-user.log
+echo -e "
+GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
+" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+
+cat > /home/vps/public_html/ssh-$Login.txt <<-END
 
 ====================================================================
              P R O J E C T  O F  N E V E R M O R E S S H
@@ -84,49 +117,54 @@ Expired On     : $exp
 
 END
 
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "\E[40;1;37m        𝗔𝗖𝗖𝗢𝗨𝗡𝗧 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡           \E[0m" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Username    : $Login" | tee -a /etc/log-create-user.log
-echo -e "Password    : $Pass" | tee -a /etc/log-create-user.log
-echo -e "Expired On  : $exp" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "\E[40;1;37m         𝗦𝗘𝗥𝗩𝗘𝗥 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡      \E[0m" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
-echo -e "Host        : $(cat /etc/xray/domain)" | tee -a /etc/log-create-user.log
-echo -e "PubKey      : $slkey" | tee -a /etc/log-create-user.log
-echo -e "Nameserver  : $sldomain" | tee -a /etc/log-create-user.log
-echo -e "OpenSSH     : $opensh" | tee -a /etc/log-create-user.log
-echo -e "SSH-WS      : $portsshws" | tee -a /etc/log-create-user.log
-echo -e "SSH-SSL-WS  : $wsssl" | tee -a /etc/log-create-user.log
-echo -e "SSH-UDP     : 1-65535" | tee -a /etc/log-create-user.log
-echo -e "SSL/TLS     : $ssl" | tee -a /etc/log-create-user.log
-echo -e "UDPGW       : 7100-7300" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-#echo -e "OpenVPN Config : http://$IP:81/" | tee -a /etc/log-create-user.log
-#echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Payload WSS" | tee -a /etc/log-create-user.log
-echo -e "
-GET wss://isi_bug_disini [protocol][crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
-" | tee -a /etc/log-create-user.log
-echo -e "Payload WS" | tee -a /etc/log-create-user.log
-echo -e "
-GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
-" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-
 else
 
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "\E[40;1;37m        𝗔𝗖𝗖𝗢𝗨𝗡𝗧 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡           \E[0m" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+cat > /home/vps/public_html/ssh-$Login.txt <<-END
+
+====================================================================
+             P R O J E C T  O F  N E V E R M O R E S S H
+                       [Freedom Internet]
+====================================================================
+             https://github.com/NevermoreSSH/
+====================================================================
+             Format SSH Account
+====================================================================
+
+             Link SSH Account
+====================================================================
+Username    : $Login
+Password    : $Pass
+Expired On  : $exp
+====================================================================
+IP          : $IP
+Host        : $(cat /etc/xray/domain)
+PubKey      : $slkey
+Nameserver  : $sldomain
+OpenSSH     : $opensh
+SSH-WS      : $portsshws
+SSH-SSL-WS  : $wsssl
+SSH-UDP     : 1-65535
+SSL/TLS     : $ssl
+UDPGW       : 7100-7300
+=========================
+Payload WSS : GET wss://isi_bug_disini [protocol][crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
+=========================
+Payload WS	: GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
+=========================
+Expired On     : $exp
+=========================
+
+END
+
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\E[40;1;37m        ð—”ð—–ð—–ð—¢ð—¨ð—¡ð—§ ð—œð—¡ð—™ð—¢ð—¥ð— ð—”ð—§ð—œð—¢ð—¡           \E[0m" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Username    : $Login" | tee -a /etc/log-create-user.log
 echo -e "Password    : $Pass" | tee -a /etc/log-create-user.log
 echo -e "Expired On  : $exp" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
-echo -e "\E[40;1;37m         𝗦𝗘𝗥𝗩𝗘𝗥 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡      \E[0m" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\E[40;1;37m         ð—¦ð—˜ð—¥ð—©ð—˜ð—¥ ð—œð—¡ð—™ð—¢ð—¥ð— ð—”ð—§ð—œð—¢ð—¡      \E[0m" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
 echo -e "IP          : $IP" | tee -a /etc/log-create-user.log
 echo -e "Host        : $(cat /etc/xray/domain)" | tee -a /etc/log-create-user.log
 echo -e "Nameserver  : $sldomain" | tee -a /etc/log-create-user.log
@@ -141,11 +179,11 @@ echo -e "UDPGW       : 7100-7300" | tee -a /etc/log-create-user.log
 echo -e "SSH-80      : $(cat /etc/xray/domain):80@$Login:$Pass"
 echo -e "SSH-443     : $(cat /etc/xray/domain):443@$Login:$Pass"
 echo -e "SETING-UDP  : $(cat /etc/xray/domain):1-65535@$Login:$Pass"
-#echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+#echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
 #echo -e "OpenVPN Config : http://$IP:81/" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Expired On     : $exp" | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Payload WSS" | tee -a /etc/log-create-user.log
 echo -e "
 GET wss://isi_bug_disini [protocol][crlf]Host: $(cat /etc/xray/domain)[crlf]Upgrade: websocket[crlf][crlf]
@@ -154,7 +192,7 @@ echo -e "Payload WS" | tee -a /etc/log-create-user.log
 echo -e "
 GET / HTTP/1.1[crlf]Host: $(cat /etc/xray/domain)[crlf]Upgrade: websocket[crlf][crlf]
 " | tee -a /etc/log-create-user.log
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\e[33mâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\033[0m" | tee -a /etc/log-create-user.log
 fi
 echo "" | tee -a /etc/log-create-user.log
 echo -e "Script Mod By NevermoreSSH"
