@@ -46,6 +46,42 @@ vlesslink1="vless://${uuid}@${domain}:443?path=/vless&security=tls&encryption=no
 vlesslink2="vless://${uuid}@${domain}:80?path=/vless&encryption=none&host=${domain}&type=ws#VLESS_NTLS_${user}"
 vlesslink3="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=${domain}#VLESS_GRPC_${user}"
 systemctl restart xray
+
+cat > /home/vps/public_html/vless-$user.txt <<-END
+
+====================================================================
+             P R O J E C T  O F  N E V E R M O R E S S H
+                       [Freedom Internet]
+====================================================================
+             https://github.com/NevermoreSSH/
+====================================================================
+             Format Xray/Vless Account WS
+====================================================================
+
+             Link Xray/Vless Account
+====================================================================
+Remarks        : ${user}
+Domain         : ${domain}
+Port TLS       : 443
+Port none TLS  : 80
+Port  GRPC     : 443
+Uuid           : ${uuid}
+Encryption     : none
+Network        : ws
+Path           : /vless
+Path           : vless-grpc
+=========================
+Link TLS       : ${vlesslink1}
+=========================
+Link none TLS  : ${vlesslink2}
+=========================
+Link GRPC      : ${vlesslink3}
+=========================
+Expired On     : $exp
+=========================
+
+END
+
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "\E[40;1;37m        Xray/Vless Account        \E[0m" | tee -a /etc/log-create-user.log
