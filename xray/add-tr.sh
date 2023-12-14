@@ -44,6 +44,36 @@ sed -i '/#trojangrpc$/a\#! '"$user $exp"'\
 systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#TROJAN_GRPC_${user}"
 trojanlink="trojan://${uuid}@${domain}:443?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#TROJAN_WS_${user}"
+
+cat > /home/vps/public_html/trojan-$user.txt <<-END
+
+====================================================================
+             P R O J E C T  O F  N E V E R M O R E S S H
+                       [Freedom Internet]
+====================================================================
+             https://github.com/NevermoreSSH/
+====================================================================
+             Format TROJAN ACCOUNT WS
+====================================================================
+
+             Link TROJAN ACCOUNT
+====================================================================
+Remarks      : ${user}
+Host/IP      : ${domain}
+port         : 443/80
+Key          : ${uuid}
+Path         : /trojan-ws
+ServiceName  : trojan-grpc
+=========================
+Link WS      : ${trojanlink}
+=========================
+Link GRPC    : ${trojanlink1}
+=========================
+Expired On   : $exp
+=========================
+
+END
+
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[40;1;37m        TROJAN ACCOUNT          \E[0m"
