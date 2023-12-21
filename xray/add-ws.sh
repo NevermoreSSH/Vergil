@@ -107,7 +107,7 @@ cat > /home/vps/public_html/vless-$user.txt <<-END
 ====================================================================
              https://github.com/NevermoreSSH/
 ====================================================================
-             Format Xray/Vmess Account WS
+             Format Xray/Vmess Account WS - V2
 ====================================================================
 
              Link Xray/Vmess Account
