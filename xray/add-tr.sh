@@ -51,9 +51,9 @@ cat > /home/vps/public_html/trojan-$user.txt <<-END
              P R O J E C T  O F  N E V E R M O R E S S H
                        [Freedom Internet]
 ====================================================================
-             https://github.com/NevermoreSSH/
+             https://github.com/NevermoreSSH/Vergil
 ====================================================================
-             Format TROJAN ACCOUNT WS
+             Format TROJAN ACCOUNT WS - V2
 ====================================================================
 
              Link TROJAN ACCOUNT
