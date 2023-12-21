@@ -53,9 +53,9 @@ cat > /home/vps/public_html/vless-$user.txt <<-END
              P R O J E C T  O F  N E V E R M O R E S S H
                        [Freedom Internet]
 ====================================================================
-             https://github.com/NevermoreSSH/
+             https://github.com/NevermoreSSH/Vergil
 ====================================================================
-             Format Xray/Vless Account WS
+             Format Xray/Vless Account WS - V2
 ====================================================================
 
              Link Xray/Vless Account
